@@ -1,0 +1,80 @@
+body {
+    background-color: black;
+    overflow-x: hidden;
+    color: white;
+}
+
+@media (min-width: 800px) {
+    .navbar {
+        z-index: 100;
+    }
+    .carousel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+    .products-grid {
+        margin-top: 60vh;
+        z-index: -100;
+    }
+}
+
+.carousel {
+    max-height: 60%;
+    overflow: hidden;
+}
+
+.carousel-image {
+    margin-top: -10%;
+}
+
+.navbar-brand h4 {
+    margin-top: 10px;
+    text-shadow: black 2px 2px 2px;
+    color: #cccccc;
+}
+
+.navbar-brand h4:hover {
+    color: white;
+}
+
+.search-group * {
+    margin: 10px;
+    margin-top: 20px;
+}
+
+.product-img {
+    max-height: 200px;
+    margin: auto;  
+}
+
+.products-grid a, .products-search a {
+    color: white;
+}
+
+.products-grid div {
+    margin: 10px;
+}
+
+.products-search a {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.jumbotron {
+    background-color: black;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+}
+
+.main-product-img {
+    max-height: 40vh;
+    max-width: 100%;
+}
+
+.main-product-img-container {
+    display: flex;
+    align-items: center;
+}
