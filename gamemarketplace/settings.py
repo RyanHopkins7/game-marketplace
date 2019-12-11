@@ -13,7 +13,7 @@ SECRET_KEY = 'i(k_0!$xogrtl)ter-nis2-!)s#(r(fvy-+feu!^3gb4q%eif4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'makeschoolgamemarketplace.herokuapp.com']
 
 
 # Application definition
@@ -113,6 +113,8 @@ LOGOUT_REDIRECT_URL = "/"
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)
+
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
