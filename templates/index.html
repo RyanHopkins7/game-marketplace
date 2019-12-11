@@ -27,7 +27,15 @@
 </div>
 
 <div class="row products-grid">
+    {% for game in games %}
     <div class="col text-center">
+        <a href="/{{ game.slug }}">
+            <img class="product-img" src="{{ game.image_url }}">
+            <h4>{{ game.title }}</h4>
+        </a>
+    </div>
+    {% endfor %}
+    <!-- <div class="col text-center">
         <a href="/game">
             <img class="product-img" src="/static/images/gta5.jpeg">
             <h4>Grand Theft Auto 5</h4>
@@ -44,6 +52,6 @@
             <img class="product-img" src="/static/images/witcher.jpg">
             <h4>The Witcher 3: Wild Hunt</h4>
         </a>
-    </div>
+    </div> -->
 </div>
 {% endblock %}

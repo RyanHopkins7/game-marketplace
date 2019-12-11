@@ -6,6 +6,7 @@ from marketplace.models import Game
 from django.views.generic.detail import DetailView
 from django.views.generic import CreateView
 from marketplace.forms import GameForm
+from django.views.generic.list import ListView
 
 def index(request):
     return render(request, 'index.html')
@@ -13,10 +14,19 @@ def index(request):
 def search(request):
     return render(request, 'search.html')
 
-def game_detail(request):
-    return render(request, 'individual_game.html')
+class GameListView(ListView):
+    """ Renders a list of all Games. """
+    model = Game
+
+    def get(self, request):
+        """ GET a list of Games. """
+        games = self.get_queryset().all()
+        return render(request, 'index.html', {
+          'games': games
+        })
 
 class GameCreateView(CreateView):
+    """ Renders form to list a new Game. """
     def get(self, request, *args, **kwargs):
         context = {'form': GameForm()}
         return render(request, 'sell.html', context)
@@ -35,5 +45,5 @@ class GameDetailView(DetailView):
 
     def get(self, request, slug):
         """ Returns a specific wiki page by slug. """
-        page = self.get_queryset().get(slug__iexact=slug)
-        return render(request, 'individual_game.html')
+        game = self.get_queryset().get(slug__iexact=slug)
+        return render(request, 'individual_game.html', {'game': game})
