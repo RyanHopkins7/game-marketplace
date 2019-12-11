@@ -11,7 +11,14 @@
         </div>
     </a>
     <div class="row search-group">
+        {% if user.is_authenticated %}
+        <p>Hello, <strong>{{ user.username }}</strong></p>
+        <a href="/submit-game"><button type="submit col" class="btn btn-info">Submit A Game</button></a>
+        <a href="/accounts/logout"><button type="submit col" class="btn btn-info">Log Out</button></a>
+        {% endif %}
+        {% if not user.is_authenticated %}
         <a href="/accounts/login"><button type="submit col" class="btn btn-info">Log In</button></a>
         <a href="/accounts/signup"><button type="submit col" class="btn btn-info">Register</button></a>
+        {% endif %}
     </div>
 </nav>

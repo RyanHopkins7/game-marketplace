@@ -5,7 +5,7 @@
 <div id='carouselControl' class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         {% for game in games %}
-        <div class="carousel-item active">
+        <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
             <a href="/{{ game.slug }}">
                 <img class="d-block w-100 carousel-image" src="{{ game.image_url }}" alt="First slide">
             </a>

@@ -104,7 +104,10 @@ USE_TZ = True
 
 GAME_TITLE_MAX_LENGTH = 600
 PRICE_MAX_LENGTH = 50
-IMAGE_URL_MAX_LENGTH = 1000
+IMAGE_URL_MAX_LENGTH = 2000
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
