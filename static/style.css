@@ -78,3 +78,7 @@ body {
     display: flex;
     align-items: center;
 }
+
+.helptext {
+    display: none;
+}
