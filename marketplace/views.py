@@ -11,9 +11,6 @@ from django.views.generic.list import ListView
 def index(request):
     return render(request, 'index.html')
 
-def search(request):
-    return render(request, 'search.html')
-
 class GameListView(ListView):
     """ Renders a list of all Games. """
     model = Game
