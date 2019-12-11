@@ -23,6 +23,7 @@ body {
 .carousel {
     max-height: 60%;
     overflow: hidden;
+    width: 100%;
 }
 
 .carousel-image {
